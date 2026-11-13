@@ -1,18 +1,23 @@
 # Mindflow skills
 
-Two agent skills for Mindflow users.
+Three agent skills for Mindflow users.
 
 **`mindflow-feasibility`** interviews someone about an automation use case and tells them
 whether Mindflow can do it: a feasibility score based only on API access and
 connectivity, the build effort (kept separate), a flow sketch, open points, and an offer
 to email the report.
 
+**`mindflow-discovery`** runs an automation discovery session: a five-question
+interview (areas, tool stack, maturity and volume, challenges and KPIs, urgency and
+operating model), a validation checkpoint, then a prioritized roadmap as an Excel
+workbook (executive summary, and use cases with their flows).
+
 **`mindflow-assistant`** helps people use the Mindflow Studio: it explains
 errors and run logs, walks through the canvas, triggers, credentials, environments, versions
 and fx functions, and gives ready-made flow patterns (approvals, polling, pagination,
 fallbacks, parallel processing, business hours, private endpoints).
 
-Both work with any agent that reads `SKILL.md` skills, such as Claude and Codex.
+All three work with any agent that reads `SKILL.md` skills, such as Claude and Codex.
 
 ## Contents
 
@@ -20,6 +25,10 @@ Both work with any agent that reads `SKILL.md` skills, such as Claude and Codex.
 mindflow-feasibility/
   SKILL.md          interview flow, scoring rules, safety
   references/       scoring, capabilities, interview guide, report and email
+mindflow-discovery/
+  SKILL.md          interview, validation checkpoint, workbook requirements
+  references/       Q1 areas, Q2 tools, Q3-Q5 guidance, Mindflow capabilities,
+                    Excel format
 mindflow-assistant/
   SKILL.md          role, safety rules, where to look
   references/       troubleshooting, steps, fx functions, triggers, credentials,
