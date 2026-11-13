@@ -35,6 +35,9 @@ manual; list it, but it doesn't lower the score.
   (Emailhook), SSH, SFTP, LDAP, MCP servers, and cloud provider APIs (AWS, Azure, Google
   Cloud…).
 - The tool can call Mindflow: it sends webhooks or can call a URL → push works.
+- Files that reach the flow (sent to the trigger or downloaded by an API step): an AI
+  Task reads docx, xlsx, CSV, PDF, PNG and JPEG. A process built on documents (invoices,
+  contracts, forms, screenshots) is not "no API" as long as the files reach the flow.
 
 Not machine channels: screens and GUIs, raw TCP/UDP or serial protocols with no
 HTTP gateway, files on a desktop.

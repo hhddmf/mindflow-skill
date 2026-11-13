@@ -130,8 +130,10 @@ Success step.
 **AI Task** (more in [ai-agents.md](ai-agents.md)) — text completion, tool calls (an integration operation with its credential)
 and agent calls (a Flowhook sub-flow used as an agent; the step becomes AI-SWARM).
 Memory: None / New Memory / Previous Step Memory / Advanced (a Memory ID, e.g. a
-`sessionId` from the caller, to continue a conversation across runs). **Don't use angle
-brackets in prompts**; they cut the prompt.
+`sessionId` from the caller, to continue a conversation across runs). **Attach a file**
+lets it read a docx, xlsx, CSV, PDF, PNG or JPEG coming from the trigger, an API step or a
+For each item ([ai-agents.md](ai-agents.md#files-letting-the-ai-read-documents-and-images)).
+**Don't use angle brackets in prompts**; they cut the prompt.
 
 **Webhook response** — only for sync calls; see [triggers.md](triggers.md).
 

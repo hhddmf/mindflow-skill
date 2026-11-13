@@ -38,6 +38,9 @@ For every system that appears, find out:
 - Decisions: "What rules decide what happens? Are they clear-cut, or a judgement call?"
   (Judgement → an AI step, usually with a human check.)
 - Volume and size: "How many items at once? Large files or attachments?"
+- Documents: "Does it involve reading files (PDF, Word, Excel, CSV, images)? Where do
+  they arrive or live?" (An AI Task reads docx, xlsx, CSV, PDF, PNG and JPEG; what
+  matters is how the file reaches the flow.)
 - People: "Does anyone need to approve or answer? How fast do they usually answer, and
   what should happen if nobody does?"
 - State: "Does it need to remember things between runs (already handled items, a

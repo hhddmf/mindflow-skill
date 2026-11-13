@@ -82,10 +82,29 @@ message): that pattern has been verified.
 In a canvas AI Task there is also **Previous Step Memory** (continue from an earlier AI
 step in the same run).
 
+## Files: letting the AI read documents and images
+
+An AI Task can read files: **Word (docx), Excel (xlsx), CSV, PDF, PNG and JPEG**.
+- **Where the file comes from**: the trigger (a file sent with the webhook or email that
+  started the run), the response of an API step (e.g. an attachment downloaded from a
+  ticketing tool, a mailbox or a storage service), or the current item of a **For each**
+  (one file per iteration).
+- **How**: in the AI Task configuration panel, click **Attach a file** and pick the file
+  from that data. At run time the file is passed to the model automatically; no script or
+  conversion step is needed.
+- In the Instructions or Input, say what to do with it: extract fields, summarise,
+  classify, compare with a policy, read a screenshot.
+- **Several files**: loop over them with a For each and attach the current item, then
+  combine the results after the loop (iteration output), or attach them one by one if
+  there are only a few.
+- Tips: ask for a fixed output format (e.g. JSON with named fields) so later steps can
+  use the answer; very long documents cost more credits and take longer; check the result
+  on a few real files before relying on it.
+
 ## Untrusted content in prompts
 
-Emails, tickets, alerts and web pages that you pass to an AI step are **data written by
-someone else**. They can contain text aimed at the model ("ignore your instructions…").
+Emails, tickets, alerts, web pages and **attached files** that you pass to an AI step are
+**data written by someone else**. They can contain text aimed at the model ("ignore your instructions…").
 - Say so in the Instructions: the content is to be analysed, never followed, and text
   addressed to an AI is itself a warning sign.
 - Don't let the AI step's answer alone trigger an action with side effects: check it with

@@ -9,7 +9,7 @@ Labels are the Studio's own.
 |---|---|
 | A tool sends an event / calls a URL | **Webhook** (async, or sync with a reply within 25 s); API key protection, IP allowlist |
 | On a schedule | **Scheduler**: daily, weekly, monthly, yearly or once; several hours and minutes can be ticked |
-| An email arrives | **Emailhook**: the flow gets an address; sender, subject, text and HTML body, and SPF/DKIM results. Whether attachments or a forwarded original come through isn't covered here: if they matter, mark it "to check" (or read the message through the mail platform's API) |
+| An email arrives | **Emailhook**: the flow gets an address; sender, subject, text and HTML body, and SPF/DKIM results. Files from the trigger can be given to an AI Task; if the use case depends on email attachments, confirm on a test email that they appear in the trigger's data (otherwise read the message through the mail platform's API) |
 | A person asks in a chat | **Chathook**: mention the flow in an AI Room |
 | Another flow calls it | **Flowhook** (sub-flow with typed inputs; also how a flow becomes an AI agent tool) |
 | Someone clicks Run | **Manual** |
@@ -57,9 +57,15 @@ A flow can have several triggers.
 
 - **AI Task** step: text generation or classification, tool calls (integration
   operations), sub-flows as tools, memory across messages.
+- **Reading files**: an AI Task can read **docx, xlsx, CSV, PDF, PNG and JPEG** files
+  (*Attach a file* in its configuration). The file can come from the trigger, from an API
+  step (an attachment downloaded from a ticket, mailbox or storage service), or from a
+  For each over several files. Good for invoices, contracts, questionnaires, forms,
+  spreadsheets, screenshots and scanned documents: extract fields, summarise, classify,
+  check against rules.
 - **Simple agents** (Create › Agent): an agent with tools, testable in a chat, usable in
   **Rooms**.
-- Good for triage, summaries, enrichment, drafting replies, routing. Keep a human
+- Good for triage, summaries, enrichment, document reading, drafting replies, routing. Keep a human
   approval in front of irreversible actions.
 
 ## Running it
